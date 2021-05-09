@@ -48,6 +48,7 @@ module.exports = {
       },
       height: {
         "550": "550px",
+        "700px": "700px"
       },
       fontSize: {
         "1xl": "1.375rem",

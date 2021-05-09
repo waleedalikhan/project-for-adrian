@@ -3,6 +3,7 @@ import { AppProps } from "next/app";
 import { CookiesProvider } from "react-cookie";
 import "@/styles/slick-slider.css";
 import "@/styles/index.css";
+import "@/styles/global.css";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

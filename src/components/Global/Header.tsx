@@ -1,7 +1,71 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import HeaderModule from "@/components/Global/HeaderModule";
+
+interface HeaderModuleInterface {
+  id: string | number;
+  moduleImg: string;
+  moduleLink: string;
+  moduleHeadline: string;
+  moduleAuthor: string;
+  moduleDate: string;
+  moduleCountry: string;
+}
 
 const Header: React.FC = () => {
+  const [headerModules, setHeaderModules] = useState<HeaderModuleInterface[]>([
+    {
+      id: 1,
+      moduleImg: "https://picsum.photos/600/300",
+      moduleLink: "#",
+      moduleHeadline: "CDMX pasa a semáforo amarillo por primera vez en la pan",
+      moduleAuthor: "Por Forbes Staff",
+      moduleDate: "mayo 7, 2021",
+      moduleCountry: "En Ciudad de Mexico",
+    },
+    {
+      id: 2,
+      moduleImg: "https://picsum.photos/600/300",
+      moduleLink: "#",
+      moduleHeadline:
+        "NASA alerta: México vive una de las peores sequías desde 2011",
+      moduleAuthor: "Por Carlos Fernandez de lara",
+      moduleDate: "mayo 7, 2021",
+      moduleCountry: "En Actualidad",
+    },
+    {
+      id: 3,
+      moduleImg: "https://picsum.photos/600/300",
+      moduleLink: "#",
+      moduleHeadline:
+        "Me solidarizo, no me tomo fotos, dice AMLO sobre suausencia en Tlahuac",
+      moduleAuthor: "Por Emmanual Carrille",
+      moduleDate: "mayo 7, 2021",
+      moduleCountry: "En Forbes Politica",
+    },
+  ]);
+
+  useEffect(() => {
+    setHeaderModules(headerModules);
+  }, []);
+
+  const renderHeaderNews = headerModules.map((news: HeaderModuleInterface) => {
+    return (
+      <React.Fragment key={news.id}>
+        <div className="w-1/3">
+          <HeaderModule
+            moduleLink={news.moduleLink}
+            moduleImg={news.moduleImg}
+            moduleHeadline={news.moduleHeadline}
+            moduleAuthor={news.moduleAuthor}
+            moduleDate={news.moduleDate}
+            moduleCountry={news.moduleCountry}
+          />
+        </div>
+      </React.Fragment>
+    );
+  });
+
   return (
     <>
       <header className="h-14 bg-black flex items-center px-5">
@@ -35,7 +99,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
       </header>
-      <nav className="w-full flex justify-center">
+      <nav className="w-full lg:hidden flex justify-center">
         <ul className="xl:w-nav-width lg:w-1/2 md:w-2/3 w-full bg-nav flex justify-evenly pb-3 p-2 md:rounded-b-2xl">
           <li>
             <Link href="/Mexico">
@@ -73,6 +137,11 @@ const Header: React.FC = () => {
             </Link>
           </li>
         </ul>
+      </nav>
+      <nav className="lg:flex hidden bg-nav py-5">
+        <div className="container mx-auto">
+          <div className="flex justify-center">{renderHeaderNews}</div>
+        </div>
       </nav>
     </>
   );

@@ -8,7 +8,7 @@ type Props = {
 const DesktopAd: React.FC<Props> = ({ className }) => {
   return (
     <>
-      <div className={cn("bg-red-500 w-2/3 mx-auto", className)}></div>
+      <div className={cn("bg-red-500 mx-auto", className)}></div>
     </>
   );
 };

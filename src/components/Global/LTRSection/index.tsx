@@ -43,6 +43,7 @@ type Props = {
   smallModuleNewsFirstCol: SmallModuleNewInterface[];
   smallModuleNewsSecondCol: SmallModuleNewInterface[];
   siderbarNews: SidebarNewsInterface[];
+  hasBannerOverlay?: boolean;
 };
 
 const LTRSection: React.FC<Props> = ({
@@ -52,6 +53,7 @@ const LTRSection: React.FC<Props> = ({
   smallModuleNewsFirstCol,
   smallModuleNewsSecondCol,
   siderbarNews,
+  hasBannerOverlay = false,
 }) => {
   const renderSiderbarNews = siderbarNews.map((news: SidebarNewsInterface) => {
     return (
@@ -131,6 +133,7 @@ const LTRSection: React.FC<Props> = ({
                   moduleMetadata={mainNews.newsAuthor}
                   moduleDate={mainNews.newsDate}
                   moduleCountry={mainNews.newsCountry}
+                  hasOverlay={hasBannerOverlay}
                 />
                 <div className="w-full pr-4 pl-2 mb-4">
                   <div className="h-0.5 bg-gray-300 w-full"></div>
