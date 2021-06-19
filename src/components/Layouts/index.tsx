@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Header from "@/components/Global/Header";
+import Header from "@/components/Global/Header/index";
 import Footer from "@/components/Global/Footer";
 
 type Props = {
@@ -26,7 +26,7 @@ const DefaultLayout: React.FC<Props> = ({
 
     <Header />
 
-    {children}
+    <div className="py-20">{children}</div>
 
     <Footer />
   </div>

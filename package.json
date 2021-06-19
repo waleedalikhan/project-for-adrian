@@ -16,6 +16,7 @@
     "@splidejs/splide": "^2.4.21",
     "@tailwindcss/jit": "^0.1.17",
     "autoprefixer": "^10.2.5",
+    "axios": "^0.21.1",
     "classnames": "^2.3.1",
     "cookie": "^0.4.1",
     "cross-env": "^7.0.3",

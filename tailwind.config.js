@@ -9,6 +9,7 @@ module.exports = {
       },
       colors: {
         nav: "#272B2E",
+        'sidebar-color': '#212424',
         button: "#DD402A",
         "line-color": "#9BA1A4",
         green: {
@@ -45,6 +46,7 @@ module.exports = {
       width: {
         "nav-width": "40%",
         "100px": "6.25rem",
+        "310": "310px"
       },
       height: {
         "550": "550px",

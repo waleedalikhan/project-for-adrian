@@ -1,3 +1,17 @@
 .ad-img {
   background: url("/images/ad-jpeg") center / cover no-repeat;
 }
+
+.cool-transition {
+  transition: all 0.4s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+}
+
+.crossline-one {
+  transform: rotate(50deg);
+  margin-bottom: -10px;
+}
+
+.crossline-two {
+  transform: rotate(-50deg);
+  margin-top: -6px;
+}
